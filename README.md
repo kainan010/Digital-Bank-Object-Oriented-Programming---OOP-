@@ -1,6 +1,6 @@
 # DigitalBank-OOP
 
-# Product Name
+# Digital Bank Object Oriented Programming
 > Short blurb about what your product does.
 
 [![NPM Version][npm-image]][npm-url]
