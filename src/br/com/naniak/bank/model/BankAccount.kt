@@ -7,6 +7,8 @@ abstract class BankAccount(
     var balance: Double = 0.0
         protected set
 
+
+        // How to count numbers of created accounts
     companion object {
         var sum = 0
             private set
@@ -23,13 +25,6 @@ abstract class BankAccount(
         }
     }
         abstract fun withdrawMoney(amount: Double)
-//        if(amount > balance) {
-//            return false
-//        } else {
-//            balance -= amount
-//            return true
-//        }
-////    }
-//
+
     }
 

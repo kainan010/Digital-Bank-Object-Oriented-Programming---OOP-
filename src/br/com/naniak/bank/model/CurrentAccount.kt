@@ -8,8 +8,7 @@ class CurrentAccount (
 ) : BankAccount(
     accountNumber = accountNumber,
     ownerAccount = ownerAccount
-){
-
+),Transferable{
     override fun withdrawMoney(amount: Double) {
         val amountTaxes = amount + 0.1
 
@@ -18,6 +17,15 @@ class CurrentAccount (
         }else{
             throw InsufficientBalanceException()
         }
+    }
+
+    override fun transfer(amount: Double, toAccount: BankAccount) {
+       if(this.balance < amount) {
+           throw InsufficientBalanceException()
+       }
+           this.balance -= amount
+           toAccount.depositMoney(amount)
+
     }
 
 }
