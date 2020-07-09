@@ -61,8 +61,8 @@ fun testBankAccounts() {
     try {
         currentAccountJoseph.transfer(amount = 5990.0, toAccount = savingAccountDylan)
     } catch (e: InsufficientBalanceException) {
-        println("Sorry, No Funds at moment !!! ")
-        e.printStackTrace()
+       // println("Sorry, No Funds at moment !!! ")
+       e.printStackTrace()
 
     }
     //After Transfering Acocunt from Joseph  to Dylan

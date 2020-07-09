@@ -1,5 +1,6 @@
 package br.com.naniak.bank.model
 
+import br.com.naniak.bank.exception.AuthenticationFailedException
 import br.com.naniak.bank.exception.InsufficientBalanceException
 
 class CurrentAccount (
@@ -19,10 +20,15 @@ class CurrentAccount (
         }
     }
 
-    override fun transfer(amount: Double, toAccount: BankAccount) {
+    override fun transfer(amount: Double, toAccount: BankAccount, password : Int) {
        if(this.balance < amount) {
-           throw InsufficientBalanceException()
+           throw InsufficientBalanceException("Please , Try again ! , no Funds...your balance : ${this.balance}")
        }
+
+        if (!authentic(password)){
+            throw AuthenticationFailedException()
+        }
+
            this.balance -= amount
            toAccount.depositMoney(amount)
 

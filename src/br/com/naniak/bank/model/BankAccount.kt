@@ -3,12 +3,12 @@ package br.com.naniak.bank.model
 abstract class BankAccount(
     val accountNumber: Int,
     val ownerAccount : Customer
-) {
+) : Authentication by  ownerAccount {
     var balance: Double = 0.0
         protected set
 
 
-        // How to count numbers of created accounts
+        // counting numbers of created accounts
     companion object {
         var sum = 0
             private set

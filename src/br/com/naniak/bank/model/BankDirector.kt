@@ -4,12 +4,13 @@ class BankDirector(
     name: String ,
     socialSecurityNumber: String,
     salary: Double,
-    val pin: Int,
+    password: Int,
     val profitSharing: Double
-): Employee(
+): EmployeeAdmin(
     name = name,
     socialSecurityNumber = socialSecurityNumber,
-    salary = salary
+    salary = salary,
+    password = password
 ) {
     override val bonusPayment: Double
         get() = this.salary + profitSharing
