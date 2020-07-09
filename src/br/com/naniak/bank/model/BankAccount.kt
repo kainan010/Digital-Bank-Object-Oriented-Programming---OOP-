@@ -7,7 +7,6 @@ abstract class BankAccount(
     var balance: Double = 0.0
         protected set
 
-
         // counting numbers of created accounts
     companion object {
         var sum = 0

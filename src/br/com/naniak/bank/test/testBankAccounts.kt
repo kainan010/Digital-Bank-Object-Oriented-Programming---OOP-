@@ -1,5 +1,6 @@
 package br.com.naniak.bank.test
 
+import br.com.naniak.bank.exception.AuthenticationFailedException
 import br.com.naniak.bank.exception.InsufficientBalanceException
 import br.com.naniak.bank.model.BankAccount.Companion.sum
 import br.com.naniak.bank.model.CurrentAccount
@@ -35,7 +36,7 @@ fun testBankAccounts() {
     println("ACCOUNT 2 - Dylan  ")
 
     //Person 2 for SavingAccount
-    val customerDylan = Customer(name = "CustomerDylan", socialSecurityNumber = "222-222-22", pin = 2121)
+    val customerDylan = Customer(name = "CustomerDylan", socialSecurityNumber = "222-222-22", password = 2121)
     val savingAccountDylan = SavingsAccount(ownerAccount = customerDylan, accountNumber = 2222)
 
     savingAccountDylan.depositMoney(100.0)
@@ -59,11 +60,13 @@ fun testBankAccounts() {
 
     println("------Test Transfer Account ----")
     try {
-        currentAccountJoseph.transfer(amount = 5990.0, toAccount = savingAccountDylan)
+        currentAccountJoseph.transfer(amount = 59.0, toAccount = savingAccountDylan,password = 122 )
     } catch (e: InsufficientBalanceException) {
        // println("Sorry, No Funds at moment !!! ")
        e.printStackTrace()
 
+    } catch (e: AuthenticationFailedException){
+        e.printStackTrace()
     }
     //After Transfering Acocunt from Joseph  to Dylan
     val amoutJoseph = currentAccountJoseph.balance
