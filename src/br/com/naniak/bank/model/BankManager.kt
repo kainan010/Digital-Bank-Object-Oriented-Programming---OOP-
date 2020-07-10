@@ -1,6 +1,6 @@
 package br.com.naniak.bank.model
 
-abstract class BankManager(
+class BankManager(
      name: String ,
      socialSecurityNumber: String,
      salary: Double,
