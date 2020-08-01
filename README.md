@@ -19,7 +19,7 @@
 
 ## Usage example
 
-A few motivating and useful examples of how you can be used. Spice this up with code blocks and potentially more acknowledgement you'll have it .
+A few motivating and useful examples of how you can be used. Spice this up with code blocks and potentially more knowledge you'll have it .
 
 
 ## Contributing
