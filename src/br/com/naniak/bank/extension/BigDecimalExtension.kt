@@ -5,20 +5,20 @@ import java.text.DecimalFormat
 import java.util.*
 
 
-fun bigDecimalArrayOf(vararg values: String): Array<BigDecimal> {
+fun bigDecimalArrayOf(vararg values: String): List<BigDecimal> {
 
-    return Array<BigDecimal>(values.size) { values[it].toBigDecimal() }
+    return List<BigDecimal>(values.size) { values[it].toBigDecimal() }
 }
 
 
-fun Array<BigDecimal>.sum(): BigDecimal {
+fun List<BigDecimal>.sum(): BigDecimal {
     return this.reduce { acc, value ->
         acc + value
     }
 }
 
 
-fun Array<BigDecimal>.average(): BigDecimal {
+fun List<BigDecimal>.average(): BigDecimal {
 
     return if (this.isEmpty()) {
         BigDecimal.ZERO

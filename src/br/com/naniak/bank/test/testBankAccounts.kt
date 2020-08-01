@@ -18,7 +18,7 @@ fun testBankAccounts() {
     println("ACCOUNT 1 - Joseph ")
         // Person 1 for Current Account
      val customerJoseph = Customer("Joseph", "111-111-11",1212)
-    val currentAccountJoseph = CurrentAccount(ownerAccount = customerJoseph, accountNumber = 1111)
+    val currentAccountJoseph = CurrentAccount(ownerAccount = customerJoseph, accountNumber = 1212)
 
     currentAccountJoseph.depositMoney(100.0)
     println(currentAccountJoseph.balance)
@@ -37,7 +37,7 @@ fun testBankAccounts() {
 
     //Person 2 for SavingAccount
     val customerDylan = Customer(name = "CustomerDylan", socialSecurityNumber = "222-222-22", password = 2121)
-    val savingAccountDylan = SavingsAccount(ownerAccount = customerDylan, accountNumber = 2222)
+    val savingAccountDylan = SavingsAccount(ownerAccount = customerDylan, accountNumber = 2121)
 
     savingAccountDylan.depositMoney(100.0)
     println(savingAccountDylan.balance)
@@ -60,7 +60,7 @@ fun testBankAccounts() {
 
     println("------Test Transfer Account ----")
     try {
-        currentAccountJoseph.transfer(amount = 59.0, toAccount = savingAccountDylan,password = 122 )
+        currentAccountJoseph.transfer(amount = 1.0, toAccount = savingAccountDylan,password = 1212 )
     } catch (e: InsufficientBalanceException) {
        // println("Sorry, No Funds at moment !!! ")
        e.printStackTrace()

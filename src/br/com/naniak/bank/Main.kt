@@ -11,6 +11,7 @@ import kotlin.math.sign
 fun main(){
     println("THIS WILL BE AWESOME,HELLO WORLD -_- ")
 
+    testBankAccounts()
 
 
 //    fun formatForBrazilianCurrency(value: BigDecimal) : String {
