@@ -11,8 +11,10 @@ import kotlin.math.sign
 fun main(){
     println("THIS WILL BE AWESOME,HELLO WORLD -_- ")
 
-    testBankAccounts()
+//    testBankAccounts()
 
+    salary2()
+    salary()
 
 //    fun formatForBrazilianCurrency(value: BigDecimal) : String {
 //        val brazilianFormat = DecimalFormat.getCurrencyInstance(Locale("pt", "br"))

@@ -5,7 +5,7 @@ import java.text.DecimalFormat
 import java.util.*
 
 
-fun bigDecimalArrayOf(vararg values: String): List<BigDecimal> {
+fun bigDecimalListOf(vararg values: String): List<BigDecimal> {
 
     return List<BigDecimal>(values.size) { values[it].toBigDecimal() }
 }
@@ -31,8 +31,15 @@ fun List<BigDecimal>.average(): BigDecimal {
 
 
 // aqui usamos api do java para formatar decimal com moeda usando Extension Function
-fun BigDecimal.formatForBrazilianCurrency(): String {
+fun BigDecimal?.formatForBrazilianCurrency(): String {
     val brazilianFormat = DecimalFormat.getCurrencyInstance(Locale("pt", "br"))
     return brazilianFormat.format(this)
 
 }
+
+//fun BigDecimal?.printSalary(){
+//    println("----------------------------")
+//    println(this?.formatForBrazilianCurrency())
+//    println("---------------------------")
+//
+//}
